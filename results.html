@@ -1,0 +1,428 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+   
+<html lang="en">
+  <head>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+    <title>Blackberry browser JS/DOM tests</title>
+    
+    <style type="text/css">
+      table { }
+      td, th { border: 1px solid #aaa; padding: 0.2em 0.5em; }
+      th { background: #555; color: #fff; border-color: #555; }
+      .undef { color: #f00; }
+      td.separator { line-height: 2em; padding-top: 1em; border: none; font-weight: bold; }
+    </style>
+    
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Test code</th>
+          <th>8100 (Pearl)</th>
+          <th>8320 (Curve)</th>
+          <th>9000 (Bold)</th>
+          <th>9530 (Storm)</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td class="separator" colspan="5">
+            <code>navigator.userAgent</code>
+          </td>
+        </tr>
+        
+        <tr>
+          <td><code>navigator.userAgent</code></td>
+          <td>Mozilla/4.0 Blackberry8100/4.2.1 Profile/MIDP-2.0 Configuration/CLDC-1.1 VendorID/-1</td>
+          <td>Mozilla/4.0 Blackberry8320/4.2.2 Profile/MIDP-2.0 Configuration/CLDC-1.1 VendorID/-1</td>
+          <td>BlackBerry9000/4.6.0.190 Profile/MIDP-2.0 Configuration/CLDC-1.1 VendorID/-1</td>
+          <td>BlackBerry9500/4.7.0.41 Profile/MIDP-2.0 Configuration/CLDC-1.1 VendorID/-1</td>
+        </tr>
+        
+        <tr>
+          <td class="separator" colspan="5">
+            Function decompilation
+          </td>
+        </tr>
+        
+        <tr>
+          <td><code>(function(a,b){return a+b}).toString()</code></td>
+          <td>function (a,b) { return a + b }</td>
+          <td>function (a,b) { return a + b }</td>
+          <td>function (a,b) { return a + b }</td>
+          <td>function (a,b) { return a + b }</td>
+        </tr>
+        
+        <tr>
+          <td class="separator" colspan="5">
+            <code>Array.prototype</code> extensions
+          </td>
+        </tr>
+        
+        <tr>
+          <td><code>([]).indexOf</code></td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+        </tr>
+        <tr>
+          <td><code>([]).forEach</code></td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+        </tr>
+        <tr>
+          <td><code>([]).reduce</code></td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+        </tr>
+        
+        <tr>
+          <td class="separator" colspan="5">
+            DOM Level 0
+          </td>
+        </tr>
+        
+        <tr>
+          <td><code>document.forms</code></td>
+          <td>[object Object]</td>
+          <td>[object Object]</td>
+          <td>[object HTMLCollection]</td>
+          <td>[object HTMLCollection]</td>
+        </tr>
+        <tr>
+          <td><code>document.images</code></td>
+          <td>[object Object]</td>
+          <td>[object Object]</td>
+          <td>[object HTMLCollection]</td>
+          <td>[object HTMLCollection]</td>
+        </tr>
+        <tr>
+          <td><code>window.frames</code></td>
+          <td>[object WindowCollection]</td>
+          <td>[object WindowCollection]</td>
+          <td>[object NamedFrameMap]</td>
+          <td>[object NamedFrameMap]</td>
+        </tr>
+        <tr>
+          <td><code>document.location</code></td>
+          <td>http://yura.thinkweb2.com/js/check/</td>
+          <td>http://yura.thinkweb2.com/js/check/</td>
+          <td>http://yura.thinkweb2.com/js/check/</td>
+          <td>http://yura.thinkweb2.com/js/check/</td>
+        </tr>
+        
+        <tr>
+          <td class="separator" colspan="5">
+            DOM Level 1
+          </td>
+        </tr>
+        
+        <tr>
+          <td><code>document.createElement</code></td>
+          <td>function createElement(){ [native code] }</td>
+          <td>function createElement(){ [native code] }</td>
+          <td>function createElement(){ [native code] }</td>
+          <td>function createElement(){ [native code] }</td>
+        </tr>
+        <tr>
+          <td><code>document.createTextNode</code></td>
+          <td>function createTextNode(){ [native code] }</td>
+          <td>function createTextNode(){ [native code] }</td>
+          <td>function createTextNode(){ [native code] }</td>
+          <td>function createTextNode(){ [native code] }</td>
+        </tr>
+        <tr>
+          <td><code>document.getElementsByTagName</code></td>
+          <td>function getElementsByTagName(){ [native code] }</td>
+          <td>function getElementsByTagName(){ [native code] }</td>
+          <td>function getElementsByTagName(){ [native code] }</td>
+          <td>function getElementsByTagName(){ [native code] }</td>
+        </tr>
+        <tr>
+          <td><code>document.insertBefore</code></td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td>function insertBefore(){ [native code] }</td>
+          <td>function insertBefore(){ [native code] }</td>
+        </tr>
+        <tr>
+          <td><code>document.replaceChild</code></td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td>function replaceChild(){ [native code] }</td>
+          <td>function replaceChild(){ [native code] }</td>
+        </tr>
+        <tr>
+          <td><code>document.removeChild</code></td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td>function removeChild(){ [native code] }</td>
+          <td>function removeChild(){ [native code] }</td>
+        </tr>
+        <tr>
+          <td><code>document.appendChild</code></td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td>function appendChild(){ [native code] }</td>
+          <td>function appendChild(){ [native code] }</td>
+        </tr>
+        <tr>
+          <td><code>document.cloneNode</code></td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td>function cloneNode(){ [native code] }</td>
+          <td>function cloneNode(){ [native code] }</td>
+        </tr>
+        <tr>
+          <td><code>document.documentElement</code></td>
+          <td>null</td>
+          <td>null</td>
+          <td>[object HTMLHtmlElement]</td>
+          <td>[object HTMLHtmlElement]</td>
+        </tr>
+        <tr>
+          <td><code>document.forms.item</code></td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td>function item(){ [native code] }</td>
+          <td>function item(){ [native code] }</td>
+        </tr>
+        <tr>
+          <td><code>document.forms.length</code></td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+        
+        <tr>
+          <td class="separator" colspan="5">
+            DOM Level 2
+          </td>
+        </tr>
+        
+        <tr>
+          <td><code>document.getElementById</code></td>
+          <td>function getElementById(){ [native code] }</td>
+          <td>function getElementById(){ [native code] }</td>
+          <td>function getElementById(){ [native code] }</td>
+          <td>function getElementById(){ [native code] }</td>
+        </tr>
+        <tr>
+          <td><code>document.addEventListener</code></td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td>function addEventListener(){ [native code] }</td>
+          <td>function addEventListener(){ [native code] }</td>
+        </tr>
+        <tr>
+          <td><code>document.removeEventListener</code></td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td>function removeEventListener(){ [native code] }</td>
+          <td>function removeEventListener(){ [native code] }</td>
+        </tr>
+        <tr>
+          <td><code>window.getComputedStyle</code></td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td>function getComputedStyle(){ [native code] }</td>
+          <td>function getComputedStyle(){ [native code] }</td>
+        </tr>
+        
+        <tr>
+          <td class="separator" colspan="5">
+            DOM Level 3
+          </td>
+        </tr>
+        
+        <tr>
+          <td><code>document.evaluate</code></td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+        </tr>
+        <tr>
+          <td><code>'textContent' in document</code></td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+        </tr>
+        
+        <tr>
+          <td class="separator" colspan="5">
+            HTML 5
+          </td>
+        </tr>
+        
+        <tr>
+          <td><code>document.getElementsByClassName</code></td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+        </tr>
+        <tr>
+          <td><code>document.querySelector</code></td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+        </tr>
+        <tr>
+          <td><code>window.openDatabase</code></td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+        </tr>
+        
+        <tr>
+          <td class="separator" colspan="5">
+            Non-standard/Proprietary
+          </td>
+        </tr>
+        
+        <tr>
+          <td><code>({}).__proto__</code></td>
+          <td>[object Object]</td>
+          <td>[object Object]</td>
+          <td>[object Object]</td>
+          <td>[object Object]</td>
+        </tr>
+        <tr>
+          <td><code>({}).__defineGetter__</code></td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+        </tr>
+        <tr>
+          <td><code>({}).watch</code></td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+        </tr>
+        <tr>
+          <td><code>({a:1,b:2}).__count__</code></td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+        </tr>
+        <tr>
+          <td><code>window.SVGElement</code></td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+        </tr>
+        <tr>
+          <td><code>window.XMLHttpRequest</code></td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td>function XMLHttpRequest() { [native code for XMLHttpRequest.XMLHttpRequest, arity=1] }</td>
+          <td>function XMLHttpRequest() { [native code for XMLHttpRequest.XMLHttpRequest, arity=1] }</td>
+        </tr>
+        <tr>
+          <td><code>document.createElement('canvas').getContext</code></td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+        </tr>
+        <tr>
+          <td><code>'MozBorderRadius' in document.createElement('div').style</code></td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td><code>'WebkitBorderRadius' in document.createElement('div').style</code></td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td><code>window.ActiveXObject</code></td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+        </tr>
+        <tr>
+          <td><code>document.forms(0)</code></td>
+          <td>TypeError: [object Object] is not a function</td>
+          <td>TypeError: [object Object] is not a function</td>
+          <td>TypeError: [object HTMLCollection] is not a function</td>
+          <td>TypeError: [object HTMLCollection] is not a function</td>
+        </tr>
+        <tr>
+          <td><code>document.forms[0].test</code></td>
+          <td>[object Input]</td>
+          <td>[object Input]</td>
+          <td>[object HTMLInputElement]</td>
+          <td>[object HTMLInputElement]</td>
+        </tr>
+        <tr>
+          <td><code>Array.slice</code></td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+        </tr>
+        <tr>
+          <td><code>document.createElement('div').constructor</code></td>
+          <td>function Object() { [native code for Object.Object, arity=1] }</td>
+          <td>function Object() { [native code for Object.Object, arity=1] }</td>
+          <td>function Object() { [native code for Object.Object, arity=1] }</td>
+          <td>function Object() { [native code for Object.Object, arity=1] }</td>
+        </tr>
+        <tr>
+          <td><code>document.all</code></td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+        </tr>
+        <tr>
+          <td><code>document.attachEvent</code></td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+          <td class="undef">undefined</td>
+        </tr>
+        <tr>
+          <td><code>Object.prototype.toString.call([])</code></td>
+          <td>[object Array]</td>
+          <td>[object Array]</td>
+          <td>[object Array]</td>
+          <td>[object Array]</td>
+        </tr>
+        <tr>
+          <td><code>'contentEditable' in document.contentEditablereateElement('div')</code></td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </body>
+</html>
