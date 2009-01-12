@@ -34,37 +34,53 @@
   document.write('<h2 id="array-prototype-extras">`Array.prototype` extras ' + backToTopAnchor + '</h2>'); 
   w('([]).indexOf');
   w('([]).forEach');
+  w('([]).map');
   w('([]).reduce');
   
   document.write('<h2 id="dom-0">DOM Level 0 ' + backToTopAnchor + '</h2>');
   w('document.forms');
   w('document.images');
   w('window.frames');
+  w('window.history');
   w('document.location');
   
   document.write('<h2 id="dom-1">DOM Level 1 ' + backToTopAnchor + '</h2>');
+  w('document.documentElement');
+  w('document.body');
+  document.write('<br>');
+  w('document.getElementById');
+  w('document.getElementById(\'test\')');
+  document.write('<br>');
   w('document.createElement');
+  w('document.createElement(\'div\')');
+  document.write('<br>');
   w('document.createTextNode');
+  w('document.createTextNode(\'test\')');
+  document.write('<br>');
   w('document.getElementsByTagName');
+  w('document.getElementsByTagName(\'html\')');
+  document.write('<br>');
+  w('document.getElementsByName');
+  w('document.getElementsByName(\'test-form\')');
+  document.write('<br>');
   w('document.insertBefore');
   w('document.replaceChild');
   w('document.removeChild');
   w('document.appendChild');
   w('document.cloneNode');
-  w('document.documentElement');
-  w('document.getElementsByTagName(\'html\')');
-  w('document.createElement(\'div\')');
-  w('document.body');
+  document.write('<br>');
   w('document.forms.item');
+  w('document.forms.item(0)');
+  document.write('<br>');
   w('document.forms.length');
   
   document.write('<h2 id="dom-2">DOM Level 2 ' + backToTopAnchor + '</h2>');
-  w('document.getElementById');
   w('document.addEventListener');
   w('document.removeEventListener');
   w('document.createDocumentFragment');
   w('window.getComputedStyle');
   w('document.documentElement.style');
+  w('\'cssText\' in document.documentElement.style');
   
   document.write('<h2 id="dom-3">DOM Level 3 ' + backToTopAnchor + '</h2>');
   w('document.evaluate');
