@@ -9,7 +9,7 @@
         '<code><strong>' + 
         s + 
         '</strong><br> ' + 
-        ((result == undefined) 
+        ((typeof result == "undefined" || result === "undefined") 
           ? ('<span class="undef">' + result + '</span>') 
           : result) + 
         '</code><br>');
@@ -30,8 +30,9 @@
   
   document.write('<h2 id="fun-decomp">Function decompilation ' + backToTopAnchor + '</h2>');
   w('(function(a,b){return a+b}).toString()');
+  w('(function test(a,b){return a+b}).toString()');
   
-  document.write('<h2 id="array-prototype-extras">`Array.prototype` extras ' + backToTopAnchor + '</h2>'); 
+  document.write('<h2 id="array-prototype-extras"><code>Array.prototype</code> extras ' + backToTopAnchor + '</h2>'); 
   w('([]).indexOf');
   w('([]).forEach');
   w('([]).map');
@@ -78,13 +79,14 @@
   w('document.addEventListener');
   w('document.removeEventListener');
   w('document.createDocumentFragment');
-  w('window.getComputedStyle');
+  w('document.defaultView.getComputedStyle');
   w('document.documentElement.style');
-  w('\'cssText\' in document.documentElement.style');
+  w('document.documentElement.currentStyle');
+  w('typeof document.documentElement.style.cssText');
   
   document.write('<h2 id="dom-3">DOM Level 3 ' + backToTopAnchor + '</h2>');
   w('document.evaluate');
-  w('\'textContent\' in document');
+  w('typeof document.documentElement.textContent');
   
   document.write('<h2 id="html-5">HTML 5 ' + backToTopAnchor + '</h2>');
   w('document.getElementsByClassName');
@@ -95,16 +97,17 @@
   w('window.XMLHttpRequest');
   w('({}).__proto__');
   w('({}).__defineGetter__');
+  w('({}).__defineSetter__');
   w('window.SVGElement');
   w('document.createElement(\'canvas\').getContext');
   
   // moz-specific
   w('({a:1,b:2}).__count__');
   w('({}).watch');
-  w('\'MozBorderRadius\' in document.documentElement.style');
+  w('typeof document.documentElement.style.MozBorderRadius');
   w('Array.slice');
   
-  w('\'WebkitBorderRadius\' in document.documentElement.style');
+  w('typeof document.documentElement.style.WebkitBorderRadius');
   
   w('document.forms(0)');
   w('document.forms[0].test');
@@ -115,7 +118,7 @@
   w('window.ActiveXObject');
   
   // is `contentEditable` present in elements
-  w('\'contentEditable\' in document.documentElement');
+  w('typeof document.documentElement.contentEditable');
   // Do host methods have `call`
   //w('window.alert.call');
   // What kind of constructor does host method have
