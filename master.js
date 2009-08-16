@@ -82,6 +82,7 @@
   w('document.defaultView.getComputedStyle');
   w('document.documentElement.style');
   w('document.documentElement.currentStyle');
+  w('document.documentElement.ownerDocument');
   w('typeof document.documentElement.style.cssText');
   
   document.write('<h2 id="dom-3">DOM Level 3 ' + backToTopAnchor + '</h2>');
