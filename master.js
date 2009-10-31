@@ -106,11 +106,14 @@
   // moz-specific
   w('({a:1,b:2}).__count__');
   w('({}).watch');
-  w('typeof document.documentElement.style.MozBorderRadius');
   w('Array.slice');
   
+  // layout engine detection
+  w('typeof document.documentElement.style.MozBorderRadius');
   w('typeof document.documentElement.style.WebkitBorderRadius');
+  w('typeof document.documentElement.style.KhtmlBorderRadius');
   
+  // non-standard form controls/document access
   w('document.forms(0)');
   w('document.forms[0].test');
   w('document.all');
