@@ -28,9 +28,10 @@
   w('navigator.userAgent');
   w('navigator.platform');
   
-  document.write('<h2 id="fun-decomp">Function decompilation ' + backToTopAnchor + '</h2>');
+  document.write('<h2 id="fun-decomp">Function decompilation / function statements' + backToTopAnchor + '</h2>');
   w('(function(a,b){return a+b}).toString()');
   w('(function test(a,b){return a+b}).toString()');
+  w('(function(){ if (true) { function f(){ return 1; }} else { function f(){ return 2; }}; return f(); })()');
   
   document.write('<h2 id="array-prototype-extras"><code>Array.prototype</code> extras ' + backToTopAnchor + '</h2>'); 
   w('([]).indexOf');
