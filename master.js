@@ -95,6 +95,12 @@
   w('document.querySelector');
   w('window.openDatabase');
   
+  document.write('<h2 id="es5">ECMAScript 5 ' + backToTopAnchor + '</h2>');
+  w('String.prototype.trim');
+  w('Object.defineProperty');
+  w('Function.prototype.bind');
+  w('this.JSON');
+  
   document.write('<h2 id="non-standard">Non-standard / proprietary ' + backToTopAnchor + '</h2>');
   w('window.XMLHttpRequest');
   w('({}).__proto__');
