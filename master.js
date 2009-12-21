@@ -2,6 +2,51 @@
   
   var backToTopAnchor = '<a href="#top" title="Return to the top of the page">Back to top</a>';
   
+  function testDecompilation(){
+    var addEvent = (function(){
+      var docEl = document.documentElement;
+      var fn;
+      if (docEl.addEventListener) {
+        fn = function addEvent(element, eventName, callback) {
+          element.addEventListener(eventName, callback, false);
+        };
+      }
+      else if (docEl.attachEvent) {
+        fn = function addEvent(element, eventName, callback) {
+          element.attachEvent('on' + eventName, callback);
+        };
+      }
+      else {
+        fn = function addEvent(element, eventName, callback) {
+          element['on' + eventName] = callback;
+        };
+      }
+      var addEvent = null;
+      return fn;
+    })();
+    var addEvent = (function(){
+      var docEl = document.documentElement;
+      var fn;
+      if (docEl.addEventListener) {
+        fn = function addEvent(element, eventName, callback) {
+          element.addEventListener(eventName, callback, false);
+        };
+      }
+      else if (docEl.attachEvent) {
+        fn = function addEvent(element, eventName, callback) {
+          element.attachEvent('on' + eventName, callback);
+        };
+      }
+      else {
+        fn = function addEvent(element, eventName, callback) {
+          element['on' + eventName] = callback;
+        };
+      }
+      var addEvent = null;
+      return fn;
+    })();
+  }
+  
   function w(s){
     try {
       var result = eval('(' + s + ')');
@@ -32,6 +77,7 @@
   w('(function(a,b){return a+b}).toString()');
   w('(function test(a,b){return a+b}).toString()');
   w('(function(){ if (true) { function f(){ return 1; }} else { function f(){ return 2; }}; return f(); })()');
+  document.write('<code><strong>String(testDecompilation)</strong></code><br><code>' + String(testDecompilation) + '</code><br>');
   
   document.write('<h2 id="array-prototype-extras"><code>Array.prototype</code> extras ' + backToTopAnchor + '</h2>'); 
   w('([]).indexOf');
@@ -136,4 +182,5 @@
   w('document.documentElement.constructor');
   // What kind of [[Class]] does instance of Array have
   w('Object.prototype.toString.call([])');
+  
 })();
