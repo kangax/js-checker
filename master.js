@@ -144,8 +144,14 @@
   document.write('<h2 id="es5">ECMAScript 5 ' + backToTopAnchor + '</h2>');
   w('String.prototype.trim');
   w('Object.defineProperty');
+  w('Object.getPrototypeOf');
+  w('Object.create');
   w('Function.prototype.bind');
+  w('Array.isArray');
   w('this.JSON');
+  w('Date.now');
+  w('Date.prototype.toISOString');
+  w('({ get foo(){ return 1; } }).foo === 1');
   
   document.write('<h2 id="non-standard">Non-standard / proprietary ' + backToTopAnchor + '</h2>');
   w('window.XMLHttpRequest');
