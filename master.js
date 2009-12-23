@@ -140,6 +140,9 @@
   w('document.getElementsByClassName');
   w('document.querySelector');
   w('window.openDatabase');
+  w('window.localStorage');
+  w('document.createElement(\'canvas\').getContext');
+  w('document.createElement(\'video\').autoplay');
   
   document.write('<h2 id="es5">ECMAScript 5 ' + backToTopAnchor + '</h2>');
   w('String.prototype.trim');
@@ -159,7 +162,6 @@
   w('({}).__defineGetter__');
   w('({}).__defineSetter__');
   w('window.SVGElement');
-  w('document.createElement(\'canvas\').getContext');
   
   // moz-specific
   w('({a:1,b:2}).__count__');
@@ -177,7 +179,7 @@
   w('document.all');
   
   // jscript-specific
-  w('document.attachEvent');
+  w('window.attachEvent');
   w('window.ActiveXObject');
   
   // is `contentEditable` present in elements
