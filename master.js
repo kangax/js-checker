@@ -163,6 +163,7 @@
   w('({}).__defineGetter__');
   w('({}).__defineSetter__');
   w('window.SVGElement');
+  w('(function(){ function foo(){} return foo.name; })()');
   
   // moz-specific
   w('({a:1,b:2}).__count__');
@@ -173,6 +174,8 @@
   w('typeof document.documentElement.style.MozBorderRadius');
   w('typeof document.documentElement.style.WebkitBorderRadius');
   w('typeof document.documentElement.style.KhtmlBorderRadius');
+  w('typeof document.documentElement.style.MsBorderRadius');
+  w('typeof document.documentElement.style.OBorderRadius');
   
   // non-standard form controls/document access
   w('document.forms(0)');
