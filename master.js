@@ -128,7 +128,6 @@
   w('document.createDocumentFragment');
   w('document.defaultView.getComputedStyle');
   w('document.documentElement.style');
-  w('document.documentElement.currentStyle');
   w('document.documentElement.ownerDocument');
   w('typeof document.documentElement.style.cssText');
   
@@ -157,6 +156,8 @@
   w('({ get foo(){ return 1; } }).foo === 1');
   
   document.write('<h2 id="non-standard">Non-standard / proprietary ' + backToTopAnchor + '</h2>');
+  
+  w('document.documentElement.currentStyle');
   w('window.XMLHttpRequest');
   w('({}).__proto__');
   w('({}).__defineGetter__');
