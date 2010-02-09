@@ -71,8 +71,8 @@
   w('navigator.userAgent');
   w('navigator.platform');
   /*@cc_on 
-    w('@_jscript_version: ' + @_jscript_version);
-    w('@_jscript_build: ' + @_jscript_build);
+    w('@_jscript_version');
+    w('@_jscript_build');
   @*/
   
   document.write('<h2 id="fun-decomp">Function decompilation / function statements' + backToTopAnchor + '</h2>');
