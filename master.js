@@ -63,15 +63,17 @@
       document.write(
         '<code><strong>' + 
         s + 
-        '</strong><br><span class="error"> ' +
-        (e.message || e) +
-        '</span></code><br>');
+        '</strong><br><span class="error">error</span></code><br>');
     }
   }
   
   document.write('<h2 id="user-agent">navigator.userAgent ' + backToTopAnchor + '</h2>');
   w('navigator.userAgent');
   w('navigator.platform');
+  /*@cc_on 
+    w('@_jscript_version: ' + @_jscript_version);
+    w('@_jscript_build: ' + @_jscript_build);
+  @*/
   
   document.write('<h2 id="fun-decomp">Function decompilation / function statements' + backToTopAnchor + '</h2>');
   w('(function(a,b){return a+b}).toString()');
@@ -153,7 +155,7 @@
   w('this.JSON');
   w('Date.now');
   w('Date.prototype.toISOString');
-  w('({ get foo(){ return 1; } }).foo === 1');
+  w('eval(\'({ get foo(){ return 1; } }).foo === 1\')');
   
   document.write('<h2 id="non-standard">Non-standard / proprietary ' + backToTopAnchor + '</h2>');
   
