@@ -70,7 +70,7 @@
   document.write('<h2 id="user-agent">navigator.userAgent ' + backToTopAnchor + '</h2>');
   w('navigator.userAgent');
   w('navigator.platform');
-  /*@cc_on 
+  /*@cc_on
     w('@_jscript_version');
     w('@_jscript_build');
   @*/
@@ -138,6 +138,7 @@
   w('typeof document.documentElement.textContent');
   
   document.write('<h2 id="html-5">HTML 5 ' + backToTopAnchor + '</h2>');
+  w('typeof document.documentElement.contentEditable');
   w('document.getElementsByClassName');
   w('document.querySelector');
   w('window.openDatabase');
@@ -157,27 +158,31 @@
   w('Date.prototype.toISOString');
   w('eval(\'({ get foo(){ return 1; } }).foo === 1\')');
   
-  document.write('<h2 id="non-standard">Non-standard / proprietary ' + backToTopAnchor + '</h2>');
+  document.write('<h2 id="rendering-engine">Rendering engine ' + backToTopAnchor + '</h2>');
+  w('typeof document.documentElement.style.borderRadius');
+  w('typeof document.documentElement.style.MozBorderRadius');
+  w('typeof document.documentElement.style.WebkitBorderRadius');
+  w('typeof document.documentElement.style.KhtmlBorderRadius');
+  w('typeof document.documentElement.style.MsBorderRadius');
+  w('typeof document.documentElement.style.OBorderRadius');
   
-  w('document.documentElement.currentStyle');
-  w('window.XMLHttpRequest');
+  document.write('<h2 id="non-standard">Non-standard / proprietary / misc. ' + backToTopAnchor + '</h2>');
+  
+  // "magic" properties
   w('({}).__proto__');
   w('({}).__defineGetter__');
   w('({}).__defineSetter__');
+  
+  w('window.XMLHttpRequest');
   w('window.SVGElement');
+  
+  // Function#name
   w('(function(){ function foo(){} return foo.name; })()');
   
   // moz-specific
   w('({a:1,b:2}).__count__');
   w('({}).watch');
   w('Array.slice');
-  
-  // layout engine detection
-  w('typeof document.documentElement.style.MozBorderRadius');
-  w('typeof document.documentElement.style.WebkitBorderRadius');
-  w('typeof document.documentElement.style.KhtmlBorderRadius');
-  w('typeof document.documentElement.style.MsBorderRadius');
-  w('typeof document.documentElement.style.OBorderRadius');
   
   // non-standard form controls/document access
   w('document.forms(0)');
@@ -188,12 +193,12 @@
   w('window.attachEvent');
   w('window.ActiveXObject');
   
-  // is `contentEditable` present in elements
-  w('typeof document.documentElement.contentEditable');
-  // Do host methods have `call`
-  //w('window.alert.call');
+  // IE specific
+  w('document.documentElement.currentStyle');
+  
   // What kind of constructor does host method have
   w('document.documentElement.constructor');
+  
   // What kind of [[Class]] does instance of Array have
   w('Object.prototype.toString.call([])');
   
