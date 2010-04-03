@@ -145,6 +145,7 @@
   w('window.localStorage');
   w('document.createElement(\'canvas\').getContext');
   w('document.createElement(\'video\').autoplay');
+  w('window.Worker');
   
   document.write('<h2 id="es5">ECMAScript 5 ' + backToTopAnchor + '</h2>');
   w('String.prototype.trim');
