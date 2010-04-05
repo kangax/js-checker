@@ -203,4 +203,7 @@
   // What kind of [[Class]] does instance of Array have
   w('Object.prototype.toString.call([])');
   
+  // Are "prototype objects" exposed? 
+  w('window.HTMLDivElement');
+  
 })();
