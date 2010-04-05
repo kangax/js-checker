@@ -203,7 +203,7 @@
   // What kind of [[Class]] does instance of Array have
   w('Object.prototype.toString.call([])');
   
-  // Are "prototype objects" exposed? 
-  w('window.HTMLDivElement');
+  // Are "prototype objects" exposed and support inheritance?
+  w('(function(){ if (window.HTMLDivElement && window.HTMLDivElement.prototype) { HTMLDivElement.prototype.x = 1; return (document.createElement(\'div\').x === 1); } })()');
   
 })();
