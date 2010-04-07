@@ -83,9 +83,14 @@
   
   document.write('<h2 id="array-prototype-extras"><code>Array.prototype</code> extras ' + backToTopAnchor + '</h2>'); 
   w('([]).indexOf');
+  w('([]).lastIndexOf');
+  w('([]).every');
+  w('([]).some');
   w('([]).forEach');
   w('([]).map');
+  w('([]).filter');
   w('([]).reduce');
+  w('([]).reduceRight');
   
   document.write('<h2 id="dom-0">DOM Level 0 ' + backToTopAnchor + '</h2>');
   w('document.forms');
