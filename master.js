@@ -149,9 +149,21 @@
   
   document.write('<h2 id="es5">ECMAScript 5 ' + backToTopAnchor + '</h2>');
   w('String.prototype.trim');
-  w('Object.defineProperty');
+  
   w('Object.getPrototypeOf');
+  w('Object.getOwnPropertyDescriptor');
+  w('Object.getOwnPropertyNames');
   w('Object.create');
+  w('Object.defineProperty');
+  w('Object.defineProperties');
+  w('Object.seal');
+  w('Object.freeze');
+  w('Object.preventExtensions');
+  w('Object.isSealed');
+  w('Object.isFrozen');
+  w('Object.isExtensible');
+  w('Object.keys');
+  
   w('Function.prototype.bind');
   w('Array.isArray');
   w('this.JSON');
