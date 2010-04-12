@@ -175,6 +175,7 @@
   w('Date.now');
   w('Date.prototype.toISOString');
   w('eval(\'({ get foo(){ return 1; } }).foo === 1\')');
+  w('("foobar"[3] === "b")');
   
   document.write('<h2 id="rendering-engine">Rendering engine ' + backToTopAnchor + '</h2>');
   w('typeof document.documentElement.style.borderRadius');
