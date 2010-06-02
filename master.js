@@ -192,6 +192,9 @@
   w('({}).__defineGetter__');
   w('({}).__defineSetter__');
   
+  // harmony proxies
+  w('typeof Proxy');
+  
   w('window.XMLHttpRequest');
   w('window.SVGElement');
   
