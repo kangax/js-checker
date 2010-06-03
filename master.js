@@ -151,8 +151,11 @@
   w('document.createElement(\'canvas\').getContext');
   w('document.createElement(\'video\').autoplay');
   w('window.Worker');
+  
   // Do input[type=file] elements have "files" property?
-  w('(function(){ var el = document.createElement("input"); el.type = "file"; return el.files; })()')
+  w('(function(){ var el = document.createElement("input"); el.type = "file"; return el.files; })()');
+  
+  w('document.documentElement.classList && document.documentElement.classList.contains');
   
   document.write('<h2 id="es5">ECMAScript 5 ' + backToTopAnchor + '</h2>');
   w('String.prototype.trim');
