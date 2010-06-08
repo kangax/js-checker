@@ -151,6 +151,7 @@
   w('document.createElement(\'canvas\').getContext');
   w('document.createElement(\'video\').autoplay');
   w('window.Worker');
+  w('window.WebSocket');
   
   // Do input[type=file] elements have "files" property?
   w('(function(){ var el = document.createElement("input"); el.type = "file"; return el.files; })()');
