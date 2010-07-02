@@ -159,27 +159,28 @@
   w('document.documentElement.classList && document.documentElement.classList.contains');
   
   document.write('<h2 id="es5">ECMAScript 5 ' + backToTopAnchor + '</h2>');
-  w('String.prototype.trim');
-  
-  w('Object.getPrototypeOf');
-  w('Object.getOwnPropertyDescriptor');
-  w('Object.getOwnPropertyNames');
   w('Object.create');
   w('Object.defineProperty');
   w('Object.defineProperties');
+  w('Object.getPrototypeOf');
+  w('Object.keys');
   w('Object.seal');
   w('Object.freeze');
+  w('Object.getOwnPropertyDescriptor');
+  w('Object.getOwnPropertyNames');
+  
   w('Object.preventExtensions');
   w('Object.isSealed');
   w('Object.isFrozen');
   w('Object.isExtensible');
-  w('Object.keys');
   
-  w('Function.prototype.bind');
+  w('Date.prototype.toISOString');
+  w('Date.now');
   w('Array.isArray');
   w('this.JSON');
-  w('Date.now');
-  w('Date.prototype.toISOString');
+  w('Function.prototype.bind');
+  w('String.prototype.trim');
+  
   w('eval(\'({ get foo(){ return 1; } }).foo === 1\')');
   w('("foobar"[3] === "b")');
   
