@@ -140,6 +140,7 @@
   
   document.write('<h2 id="dom-3">DOM Level 3 ' + backToTopAnchor + '</h2>');
   w('document.evaluate');
+  w('document.documentElement.getUserData');
   w('typeof document.documentElement.textContent');
   
   document.write('<h2 id="html-5">HTML 5 ' + backToTopAnchor + '</h2>');
