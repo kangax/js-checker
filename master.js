@@ -200,6 +200,9 @@
   w('({}).__defineGetter__');
   w('({}).__defineSetter__');
   
+  // Mozilla's extension
+  w('document.currentScript');
+  
   // harmony proxies
   w('typeof Proxy');
   
