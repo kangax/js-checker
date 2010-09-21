@@ -202,6 +202,7 @@
   
   // Mozilla's extension
   w('document.currentScript');
+  w('typeof FormData');
   
   // harmony proxies
   w('typeof Proxy');
@@ -234,6 +235,9 @@
   
   // What kind of [[Class]] does instance of Array have
   w('Object.prototype.toString.call([])');
+  
+  // What kind of [[Class]] does host method have
+  w('Object.prototype.toString.call(document.body.appendChild)');
   
   // Are "prototype objects" exposed and support inheritance?
   w('(function(){ if (window.HTMLDivElement && window.HTMLDivElement.prototype) { HTMLDivElement.prototype.x = 1; return (document.createElement(\'div\').x === 1); } })()');
