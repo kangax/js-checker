@@ -193,53 +193,75 @@
   w('typeof document.documentElement.style.MsBorderRadius');
   w('typeof document.documentElement.style.OBorderRadius');
   
-  document.write('<h2 id="non-standard">Non-standard / proprietary / misc. ' + backToTopAnchor + '</h2>');
+  document.write('<h2 id="non-standard-magic">Non-standard "magic" properties ' + backToTopAnchor + '</h2>');
   
   // "magic" properties
-  w('({}).__proto__');
-  w('({}).__defineGetter__');
-  w('({}).__defineSetter__');
+  w('({ }).__proto__');
+  w('({ }).__defineGetter__');
+  w('({ }).__defineSetter__');
+  w('({ a: 1, b: 2 }).__count__');
   
-  // Mozilla's extension
-  w('document.currentScript');
-  w('typeof FormData');
+  document.write('<h2 id="es-harmony">ECMAScript Harmony ' + backToTopAnchor + '</h2>');
   
   // harmony proxies
   w('typeof Proxy');
   
-  w('window.XMLHttpRequest');
-  w('window.SVGElement');
-  
-  // Function#name
-  w('(function(){ function foo(){} return foo.name; })()');
-  
-  // moz-specific
-  w('({a:1,b:2}).__count__');
-  w('({}).watch');
-  w('Array.slice');
+  document.write('<h2 id="non-standard-elements-access">Non-standard elements access ' + backToTopAnchor + '</h2>');
   
   // non-standard form controls/document access
   w('document.forms(0)');
   w('document.forms[0].test');
   w('document.all');
   
+  document.write('<h2 id="ie-specific">IE specific ' + backToTopAnchor + '</h2>');
+  
   // jscript-specific
   w('window.attachEvent');
   w('window.ActiveXObject');
-  
-  // IE specific
   w('document.documentElement.currentStyle');
+  w('typeof document.documentElement.innerText');
+  
+  document.write('<h2 id="host-objects-inspection">Host objects inspection ' + backToTopAnchor + '</h2>')
   
   // What kind of constructor does host method have
   w('document.documentElement.constructor');
-  
-  // What kind of [[Class]] does instance of Array have
-  w('Object.prototype.toString.call([])');
   
   // What kind of [[Class]] does host method have
   w('Object.prototype.toString.call(document.body.appendChild)');
   
   // Are "prototype objects" exposed and support inheritance?
   w('(function(){ if (window.HTMLDivElement && window.HTMLDivElement.prototype) { HTMLDivElement.prototype.x = 1; return (document.createElement(\'div\').x === 1); } })()');
+  
+  document.write('<h2 id="misc">Misc properties ' + backToTopAnchor + '</h2>');
+  
+  // Function#name
+  w('(function f(){ return f.name })()');
+  
+  document.write('<br>');
+  
+  w('window.XMLHttpRequest');
+  w('window.SVGElement');
+  
+  document.write('<br>');
+  
+  // Mozilla's extension
+  w('document.currentScript');
+  
+  document.write('<br>');
+  
+  w('FormData');
+  w('FileReader');
+  w('Int32Array');
+  
+  document.write('<br>');
+  
+  // moz-specific
+  w('({}).watch');
+  w('Array.slice');
+  
+  document.write('<br>');
+  
+  // What kind of [[Class]] does instance of Array have
+  w('Object.prototype.toString.call([])');
   
 })();
