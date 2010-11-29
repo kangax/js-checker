@@ -220,6 +220,7 @@
   w('window.ActiveXObject');
   w('document.documentElement.currentStyle');
   w('typeof document.documentElement.innerText');
+  w('typeof document.documentElement.outerHTML');
   
   document.write('<h2 id="host-objects-inspection">Host objects inspection ' + backToTopAnchor + '</h2>')
   
